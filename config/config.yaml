@@ -1,0 +1,24 @@
+keyring:
+  backend: test
+  dir: ""
+
+
+mysql:
+  dns: root:root@tcp(127.0.0.1:3306)/wasmchain?charset=utf8mb4&parseTime=True&loc=Local
+
+grpc:
+  cosmos:
+    endpoint: 192.168.40.133:9090
+  cosmwasm:
+    endpoint: 192.168.40.136:9090
+
+redis:
+  address: 127.0.0.1:6379
+  password: ""
+  db: 0
+
+rpc:
+  grpc_endpoint: 192.168.40.136:9090
+
+log:
+  level: info

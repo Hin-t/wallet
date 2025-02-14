@@ -1,0 +1,270 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "contact": {}
+    },
+    "paths": {
+        "/transaction/queryBalance": {
+            "post": {
+                "description": "send sendAddress to receiverAddress amount",
+                "tags": [
+                    "交易模块"
+                ],
+                "summary": "QueryBalance",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "查询地址",
+                        "name": "address",
+                        "in": "formData"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "code\",\"message\"}",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "/transaction/queryContractBalance": {
+            "post": {
+                "description": "query contract balance by address",
+                "tags": [
+                    "交易模块"
+                ],
+                "summary": "ContractQueryBalance",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "查询地址",
+                        "name": "query_addr",
+                        "in": "formData"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "code\",\"message\"}",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "/transaction/queryTokenInfo": {
+            "get": {
+                "description": "query token info",
+                "tags": [
+                    "交易模块"
+                ],
+                "summary": "QueryTokenInfo",
+                "responses": {
+                    "200": {
+                        "description": "code\",\"message\"}",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "/transaction/queryTransaction": {
+            "post": {
+                "description": "query transaction by txhash",
+                "tags": [
+                    "交易模块"
+                ],
+                "summary": "QueryTransaction",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "交易哈希",
+                        "name": "txhash",
+                        "in": "formData"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "code\",\"message\"}",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "/transaction/send": {
+            "post": {
+                "description": "send sendAddress to receiverAddress amount",
+                "tags": [
+                    "交易模块"
+                ],
+                "summary": "SendToReceiver",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "发送账户名称",
+                        "name": "name",
+                        "in": "formData"
+                    },
+                    {
+                        "type": "string",
+                        "description": "密码",
+                        "name": "password",
+                        "in": "formData"
+                    },
+                    {
+                        "type": "string",
+                        "description": "接收地址",
+                        "name": "receiverAddress",
+                        "in": "formData"
+                    },
+                    {
+                        "type": "string",
+                        "description": "转账金额",
+                        "name": "amount",
+                        "in": "formData"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "code\",\"message\"}",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "/transaction/transferCW20TokenService": {
+            "post": {
+                "description": "transfer by contract",
+                "tags": [
+                    "交易模块"
+                ],
+                "summary": "TransferCW20TokenService",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "发送账户名称",
+                        "name": "name",
+                        "in": "formData"
+                    },
+                    {
+                        "type": "string",
+                        "description": "密码",
+                        "name": "password",
+                        "in": "formData"
+                    },
+                    {
+                        "type": "string",
+                        "description": "接收地址",
+                        "name": "recipient",
+                        "in": "formData"
+                    },
+                    {
+                        "type": "string",
+                        "description": "转账金额",
+                        "name": "amount",
+                        "in": "formData"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "code\",\"message\"}",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "/user/createAccount": {
+            "post": {
+                "description": "创建账户",
+                "tags": [
+                    "账户模块"
+                ],
+                "summary": "CreateAccount",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "账户名称",
+                        "name": "name",
+                        "in": "formData"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "code\",\"message\"}",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "/user/findAccountAddressByName": {
+            "post": {
+                "description": "根据给定账户名称查找账户地址",
+                "tags": [
+                    "账户模块"
+                ],
+                "summary": "FindAccountAddressByName",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "账户名称",
+                        "name": "name",
+                        "in": "formData"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "code\",\"message\"}",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "/user/findAllAccount": {
+            "get": {
+                "description": "查找全部账户信息",
+                "tags": [
+                    "账户模块"
+                ],
+                "summary": "FindAllAccount",
+                "responses": {
+                    "200": {
+                        "description": "code\",\"message\"}",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "/user/getAccountAllAddress": {
+            "get": {
+                "description": "查找全部账户地址",
+                "tags": [
+                    "账户模块"
+                ],
+                "summary": "GetAccountAllAddress",
+                "responses": {
+                    "200": {
+                        "description": "code\",\"message\"}",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,173 @@
+info:
+  contact: {}
+paths:
+  /transaction/queryBalance:
+    post:
+      description: send sendAddress to receiverAddress amount
+      parameters:
+      - description: 查询地址
+        in: formData
+        name: address
+        type: string
+      responses:
+        "200":
+          description: code","message"}
+          schema:
+            type: string
+      summary: QueryBalance
+      tags:
+      - 交易模块
+  /transaction/queryContractBalance:
+    post:
+      description: query contract balance by address
+      parameters:
+      - description: 查询地址
+        in: formData
+        name: query_addr
+        type: string
+      responses:
+        "200":
+          description: code","message"}
+          schema:
+            type: string
+      summary: ContractQueryBalance
+      tags:
+      - 交易模块
+  /transaction/queryTokenInfo:
+    get:
+      description: query token info
+      responses:
+        "200":
+          description: code","message"}
+          schema:
+            type: string
+      summary: QueryTokenInfo
+      tags:
+      - 交易模块
+  /transaction/queryTransaction:
+    post:
+      description: query transaction by txhash
+      parameters:
+      - description: 交易哈希
+        in: formData
+        name: txhash
+        type: string
+      responses:
+        "200":
+          description: code","message"}
+          schema:
+            type: string
+      summary: QueryTransaction
+      tags:
+      - 交易模块
+  /transaction/send:
+    post:
+      description: send sendAddress to receiverAddress amount
+      parameters:
+      - description: 发送账户名称
+        in: formData
+        name: name
+        type: string
+      - description: 密码
+        in: formData
+        name: password
+        type: string
+      - description: 接收地址
+        in: formData
+        name: receiverAddress
+        type: string
+      - description: 转账金额
+        in: formData
+        name: amount
+        type: string
+      responses:
+        "200":
+          description: code","message"}
+          schema:
+            type: string
+      summary: SendToReceiver
+      tags:
+      - 交易模块
+  /transaction/transferCW20TokenService:
+    post:
+      description: transfer by contract
+      parameters:
+      - description: 发送账户名称
+        in: formData
+        name: name
+        type: string
+      - description: 密码
+        in: formData
+        name: password
+        type: string
+      - description: 接收地址
+        in: formData
+        name: recipient
+        type: string
+      - description: 转账金额
+        in: formData
+        name: amount
+        type: string
+      responses:
+        "200":
+          description: code","message"}
+          schema:
+            type: string
+      summary: TransferCW20TokenService
+      tags:
+      - 交易模块
+  /user/createAccount:
+    post:
+      description: 创建账户
+      parameters:
+      - description: 账户名称
+        in: formData
+        name: name
+        type: string
+      responses:
+        "200":
+          description: code","message"}
+          schema:
+            type: string
+      summary: CreateAccount
+      tags:
+      - 账户模块
+  /user/findAccountAddressByName:
+    post:
+      description: 根据给定账户名称查找账户地址
+      parameters:
+      - description: 账户名称
+        in: formData
+        name: name
+        type: string
+      responses:
+        "200":
+          description: code","message"}
+          schema:
+            type: string
+      summary: FindAccountAddressByName
+      tags:
+      - 账户模块
+  /user/findAllAccount:
+    get:
+      description: 查找全部账户信息
+      responses:
+        "200":
+          description: code","message"}
+          schema:
+            type: string
+      summary: FindAllAccount
+      tags:
+      - 账户模块
+  /user/getAccountAllAddress:
+    get:
+      description: 查找全部账户地址
+      responses:
+        "200":
+          description: code","message"}
+          schema:
+            type: string
+      summary: GetAccountAllAddress
+      tags:
+      - 账户模块
+swagger: "2.0"
