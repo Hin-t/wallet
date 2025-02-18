@@ -1,9 +1,9 @@
 package service
 
 import (
-	"demo1/internal/repository"
-	"demo1/internal/wallet"
 	"github.com/gin-gonic/gin"
+	"wallet/internal/repository"
+	"wallet/internal/wallet"
 )
 
 // CreateAccount

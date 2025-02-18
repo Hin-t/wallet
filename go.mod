@@ -1,14 +1,11 @@
-module demo1
+module wallet
 
 go 1.23.4
 
 require (
-	cosmossdk.io/api v0.7.6
 	github.com/CosmWasm/wasmd v0.50.0
 	github.com/cosmos/cosmos-sdk v0.50.11
 	github.com/gin-gonic/gin v1.9.0
-	github.com/go-redis/redis/v8 v8.11.5
-	github.com/spf13/cobra v1.8.1
 	github.com/spf13/viper v1.19.0
 	github.com/swaggo/files v1.0.1
 	github.com/swaggo/gin-swagger v1.6.0
@@ -19,6 +16,7 @@ require (
 )
 
 require (
+	cosmossdk.io/api v0.7.6 // indirect
 	cosmossdk.io/collections v0.4.0 // indirect
 	cosmossdk.io/core v0.11.1 // indirect
 	cosmossdk.io/depinject v1.1.0 // indirect
@@ -70,7 +68,6 @@ require (
 	github.com/desertbit/timer v0.0.0-20180107155436-c41aec40b27f // indirect
 	github.com/dgraph-io/badger/v4 v4.2.0 // indirect
 	github.com/dgraph-io/ristretto v0.1.1 // indirect
-	github.com/dgryski/go-rendezvous v0.0.0-20200823014737-9f7001d12a5f // indirect
 	github.com/distribution/reference v0.5.0 // indirect
 	github.com/dustin/go-humanize v1.0.1 // indirect
 	github.com/dvsekhvalnov/jose2go v1.6.0 // indirect
@@ -162,6 +159,7 @@ require (
 	github.com/sourcegraph/conc v0.3.0 // indirect
 	github.com/spf13/afero v1.11.0 // indirect
 	github.com/spf13/cast v1.7.1 // indirect
+	github.com/spf13/cobra v1.8.1 // indirect
 	github.com/spf13/pflag v1.0.5 // indirect
 	github.com/stretchr/testify v1.10.0 // indirect
 	github.com/subosito/gotenv v1.6.0 // indirect

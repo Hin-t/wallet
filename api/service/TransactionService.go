@@ -1,9 +1,9 @@
 package service
 
 import (
-	"demo1/internal/blockchain"
 	"github.com/gin-gonic/gin"
 	"net/http"
+	"wallet/internal/blockchain"
 )
 
 // SendToReceiver
@@ -30,13 +30,13 @@ func SendToReceiver(c *gin.Context) {
 // @Summary QueryBalance
 // @Description send sendAddress to receiverAddress amount
 // @Tags 交易模块
-// @param address formData string false "查询地址"
+// @param address query string false "查询地址"
 // @Success 200 {string} json{"code","message"}
-// @Router /transaction/queryBalance [post]
+// @Router /transaction/queryBalance [get]
 func QueryBalance(c *gin.Context) {
-	address := c.PostForm("address")
-	balance := blockchain.QueryBalance(address)
-	c.JSON(http.StatusOK, gin.H{"balance": balance})
+	address := c.Query("address")
+	resp := blockchain.QueryBalance(address)
+	c.JSON(http.StatusOK, gin.H{"balance": resp.Balance})
 }
 
 // QueryTransaction

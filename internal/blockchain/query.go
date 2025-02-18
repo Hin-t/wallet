@@ -6,17 +6,17 @@ package blockchain
 
 import (
 	"context"
-	"demo1/internal/grpc"
 	"fmt"
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	"github.com/cosmos/cosmos-sdk/types/tx"
 	"github.com/cosmos/cosmos-sdk/x/auth/types"
 	types2 "github.com/cosmos/cosmos-sdk/x/bank/types"
 	"log"
+	"wallet/internal/grpc"
 )
 
 // QueryBalance 查询账户余额
-func QueryBalance(address string) *sdk.Coin {
+func QueryBalance(address string) *types2.QueryBalanceResponse {
 	// 新建查询客户端
 	queryClient := types2.NewQueryClient(grpc.NewGrpcConn())
 	req := &types2.QueryBalanceRequest{
@@ -28,7 +28,7 @@ func QueryBalance(address string) *sdk.Coin {
 		log.Fatal(err)
 	}
 	fmt.Println(resp)
-	return resp.Balance
+	return resp
 }
 
 // QueryAccountNumberAndSequence 查询账户的AccountNumber和Sequence

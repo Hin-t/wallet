@@ -1,8 +1,8 @@
 package main
 
 import (
-	"demo1/api/router"
-	"demo1/config"
+	"wallet/api/router"
+	"wallet/config"
 )
 
 func main() {

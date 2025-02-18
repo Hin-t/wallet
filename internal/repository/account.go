@@ -1,15 +1,17 @@
 package repository
 
 import (
-	"demo1/internal/db"
-	"demo1/internal/wallet"
+	"crypto/sha256"
 	"github.com/cosmos/cosmos-sdk/crypto/keyring"
+	"wallet/internal/db"
+	"wallet/internal/wallet"
 )
 
 type Account struct {
 	Name      string
 	Publickey string
 	Address   string
+	Password  [32]byte
 	Mnemonic  string //助记词存储方式，字符串？字符串列表
 }
 
@@ -25,6 +27,7 @@ func CreateAccount(name, password string) *Account {
 		Name:      record.Name,
 		Address:   address.String(),
 		Publickey: record.PubKey.String(),
+		Password:  sha256.Sum256([]byte(password)),
 		Mnemonic:  mnemonic,
 	}
 	db.InitMySQL().Create(account)
@@ -63,4 +66,32 @@ func GetReceiversList() []string {
 		addresses = append(addresses, account.Address)
 	}
 	return addresses
+}
+
+// Login 登陆
+func Login(name, password string) int {
+	account := &Account{}
+	db.InitMySQL().Where("name = ?", name).First(account)
+	if account.Password == sha256.Sum256([]byte(password)) {
+		return 0
+	}
+	return 1
+}
+
+// Register 注册
+func Register(name, password string) int {
+	record, mnemonic := wallet.CreateNewAccount(name, password)
+	address, _ := record.GetAddress()
+	account := &Account{
+		Name:      record.Name,
+		Address:   address.String(),
+		Publickey: record.PubKey.String(),
+		Password:  sha256.Sum256([]byte(password)),
+		Mnemonic:  mnemonic,
+	}
+	if err := db.InitMySQL().Create(account); err != nil {
+		return 1
+	}
+	return 0
+
 }

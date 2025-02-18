@@ -1,7 +1,6 @@
 package wallet
 
 import (
-	"demo1/internal/utils"
 	"fmt"
 	"github.com/cosmos/cosmos-sdk/crypto"
 	"github.com/cosmos/cosmos-sdk/crypto/keyring"
@@ -10,6 +9,7 @@ import (
 	"log"
 	"os"
 	"path/filepath"
+	"wallet/internal/utils"
 )
 
 // InitKeyring 初始化秘钥环

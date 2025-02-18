@@ -2,14 +2,14 @@ package blockchain
 
 import (
 	"context"
-	"demo1/config"
-	"demo1/internal/grpc"
-	"demo1/internal/repository"
 	"encoding/json"
 	"fmt"
 	wasmtypes "github.com/CosmWasm/wasmd/x/wasm/types"
 	"log"
 	"sync"
+	"wallet/config"
+	"wallet/internal/grpc"
+	"wallet/internal/repository"
 )
 
 var Wg sync.WaitGroup

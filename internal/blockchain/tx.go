@@ -2,11 +2,12 @@ package blockchain
 
 import (
 	"context"
-	"demo1/config"
-	"demo1/internal/grpc"
-	"demo1/internal/repository"
-	"demo1/internal/utils"
-	"demo1/internal/wallet"
+	"wallet/config"
+	"wallet/internal/grpc"
+	"wallet/internal/repository"
+	"wallet/internal/utils"
+	"wallet/internal/wallet"
+
 	"encoding/json"
 	"fmt"
 	wasmtypes "github.com/CosmWasm/wasmd/x/wasm/types"

@@ -6,8 +6,8 @@ package blockchain
 
 import (
 	"context"
-	"demo1/internal/grpc"
 	"github.com/cosmos/cosmos-sdk/types/tx"
+	"wallet/internal/grpc"
 )
 
 // Broadcast 广播交易
